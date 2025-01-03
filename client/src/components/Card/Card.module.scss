@@ -1,9 +1,76 @@
+$radius: 30px;
 .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  border-radius: 10px;
+  border-radius: $radius;
   transition: all 0.2s;
   height: 680px;
-  width: 380px;
+  width: 400px;
+  background-size: cover; /* Ensure the whole image fits within the container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Avoid repeating the image */
+  // border: 1px solid gray;
+  // padding: 0.5rem 0;
+}
+
+.ratingWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.7rem;
+  transition: all 0.2s;
+
+  .ratingContent {
+    // font-family: 'Rubik Vinyl', serif;
+    font-family: 'Jersey 15', serif;
+    border-radius: 10px;
+    background-color: #acd358;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.3rem 0.7rem;
+
+    img {
+      $size: 35px;
+      height: $size;
+      width: $size;
+    }
+    h2 {
+      line-height: 35px;
+      font-size: 35px;
+      font-weight: 400;
+    }
+  }
+}
+
+.downContent {
+  // flex: 1;
+  // outline: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  //overlay
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  backdrop-filter: blur(1px);
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+.descriptionWrapper {
+  margin: auto;
+  width: 90%;
+  color: white;
+  p {
+    line-height: 19px;
+    font-size: 16px;
+    // font-weight: 700;
+  }
 }

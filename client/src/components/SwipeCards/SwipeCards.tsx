@@ -11,7 +11,7 @@ const SwipeCards: React.FC<SwipeCardsProps> = ({ movies }) => {
       className={c.wrapper}
       // style={{ backgroundImage: `url(${movies[0].imageUrl})` }}
     >
-      <Card key={movies[0].id} {...movies[0]} />;
+      <Card key={movies[0].id} {...movies[20]} />
       {/* {movies.map((movie) => {
         return <Card key={movie.id} {...movie} />;
       })} */}
