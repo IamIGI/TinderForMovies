@@ -1,0 +1,43 @@
+.wrapper {
+  //   outline: 1px solid red;
+  width: 100%;
+  padding: 1rem 2rem 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  button {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    $size: 56px;
+    height: $size;
+    width: $size;
+    transition: all 0.2s;
+
+    &:hover {
+      scale: 1.25;
+    }
+
+    img {
+      width: calc($size - 17px);
+      height: calc($size - 17px);
+    }
+
+    &:nth-child(1) {
+      background-color: #5e7d1b;
+    }
+    &:nth-child(2) {
+      height: calc($size + 11px);
+      width: calc($size + 11px);
+      background-color: #acd358;
+      box-shadow: 0 0 5px 10px rgba(216, 255, 129, 0.5),
+        0 0 6px 3px rgba(216, 255, 129, 1);
+    }
+    &:nth-child(3) {
+      background-color: #ff4365;
+    }
+  }
+}
