@@ -45,3 +45,14 @@ button,
 textarea {
   font: inherit;
 }
+
+.app-wrapper {
+  width: 100%;
+  max-width: 2000px;
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
