@@ -5,7 +5,7 @@ interface SideMenuProps {
   onCloseCart: () => void;
 }
 
-const SideMenu: React.FC<SideMenuProps> = ({ isVisible, onCloseCart }) => {
+const SideMenu: React.FC<SideMenuProps> = () => {
   return <div className={c.wrapper}>SideMenu</div>;
 };
 
