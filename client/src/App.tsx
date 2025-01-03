@@ -1,13 +1,15 @@
 import './styles/global.vars.scss';
 import './styles/global.scss';
-import { tinderMovies } from './mocks/movies';
+import MainTemplate from './views/MainTemplate/MainTemplate';
+import Root from './views/Root';
 
 function App() {
   return (
-    <>
-      <h1>Home</h1>
-      <img src={tinderMovies[1].imageUrl} alt="placeholder" />
-    </>
+    <div className="app-wrapper">
+      <MainTemplate>
+        <Root />
+      </MainTemplate>
+    </div>
   );
 }
 
