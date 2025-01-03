@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className={c.wrapper}>
       <div className={c.content}>
-        <SwipeCards movies={tinderMovies} />
+        <SwipeCards moviesData={tinderMovies} />
       </div>
       <KeyboardControlsLegend />
     </div>
