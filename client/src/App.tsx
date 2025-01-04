@@ -2,14 +2,17 @@ import './styles/global.vars.scss';
 import './styles/global.scss';
 import MainTemplate from './views/MainTemplate/MainTemplate';
 import Root from './views/Root';
+import { MovieContextProvider } from './context/MoviesContext';
 
 function App() {
   return (
-    <div className="app-wrapper">
-      <MainTemplate>
-        <Root />
-      </MainTemplate>
-    </div>
+    <MovieContextProvider>
+      <div className="app-wrapper">
+        <MainTemplate>
+          <Root />
+        </MainTemplate>
+      </div>
+    </MovieContextProvider>
   );
 }
 

@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import NavBar from '../../components/Navigation/Navbar/NavBar';
 
-// import SideMenu from '../../components/SideMenu/SideMenu';
+import SideMenu from '../../components/SideMenu/SideMenu';
 // import { useToggleState } from '../../hooks/useToggleState';
 
 const MainTemplate: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -13,10 +13,7 @@ const MainTemplate: React.FC<{ children: ReactNode }> = ({ children }) => {
       <NavBar handleMenuClick={() => {}} />
       {children}
 
-      {/* <SideMenu
-        isVisible={isMenuVisible}
-        onCloseCart={() => setMenuVisibility(false)}
-      /> */}
+      <SideMenu isVisible={false} onCloseCart={() => {}} />
       {/* <CartPreview
         isVisible={isCartVisible}
         onCloseCart={() => setCartVisibility(false)}
