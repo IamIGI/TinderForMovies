@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Movie } from '../../interfaces/movie.interface.';
 import Card, { CardRef } from '../Card/Card';
 import c from './SwipeCards.module.scss';
@@ -7,11 +7,14 @@ interface SwipeCardsProps {
   moviesData: Movie[];
 }
 const SwipeCards: React.FC<SwipeCardsProps> = ({ moviesData }) => {
+  const [lastCardId, setLastCardId] = useState<string | null>(null);
   const lastCardRef = useRef<CardRef>(null);
 
   const handleArrowsDown = (e: KeyboardEvent) => {
     const lastCard = lastCardRef.current;
     if (!lastCard) return;
+    if (lastCard.id === lastCardId) return;
+    setLastCardId(lastCard.id);
 
     switch (e.key) {
       case 'ArrowLeft':

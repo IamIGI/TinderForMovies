@@ -9,11 +9,12 @@ import {
   useMotionValue,
   useTransform,
 } from 'framer-motion';
-import { forwardRef, Ref, useImperativeHandle } from 'react';
+import { forwardRef, Ref, useImperativeHandle, useRef } from 'react';
 
 export type CardRef = {
   moveLeft: () => void;
   moveRight: () => void;
+  id: string;
 };
 
 const Card = (
@@ -22,6 +23,7 @@ const Card = (
 ) => {
   const movieData = { id, imageUrl, rating, summary, title };
   const { setMovieStatus } = useMoviesContext();
+  const cardRef = useRef<HTMLDivElement>(null);
   //
   const dragEnd = 560;
   const position = useMotionValue(0);
@@ -51,10 +53,12 @@ const Card = (
   useImperativeHandle(ref, () => ({
     moveLeft,
     moveRight,
+    id: cardRef.current?.id || '',
   }));
 
   return (
     <motion.div
+      ref={cardRef}
       id={id}
       className={c.wrapper}
       style={{
