@@ -1,14 +1,20 @@
 import { useMoviesContext } from '../../context/MoviesContext';
 import { Movie } from '../../interfaces/movie.interface.';
-import Actions from './CardActions/CardActions';
+import CardActions from './CardActions/CardActions';
 import c from './Card.module.scss';
-import { motion, PanInfo, useMotionValue, useTransform } from 'framer-motion';
+import {
+  animate,
+  motion,
+  PanInfo,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
 
 const Card: React.FC<Movie> = ({ id, imageUrl, rating, summary, title }) => {
   const movieData = { id, imageUrl, rating, summary, title };
   const { setMovieStatus } = useMoviesContext();
   //
-  const dragEnd = 400;
+  const dragEnd = 700;
   const position = useMotionValue(0);
   const opacity = useTransform(position, [-dragEnd, 0, dragEnd], [0.3, 1, 0.3]);
   const rotate = useTransform(position, [-dragEnd, dragEnd], [-30, 30]);
@@ -19,6 +25,18 @@ const Card: React.FC<Movie> = ({ id, imageUrl, rating, summary, title }) => {
     } else if (info.offset.x < -dragEnd) {
       setMovieStatus(movieData, true);
     }
+  };
+
+  const moveLeft = () => {
+    animate(position, -dragEnd, { duration: 0.5 }).then(() => {
+      setMovieStatus(movieData, true);
+    });
+  };
+
+  const moveRight = () => {
+    animate(position, dragEnd, { duration: 0.5 }).then(() => {
+      setMovieStatus(movieData, false);
+    });
   };
 
   return (
@@ -51,7 +69,7 @@ const Card: React.FC<Movie> = ({ id, imageUrl, rating, summary, title }) => {
           <h1>{title}</h1>
           <p>{summary}</p>
         </div>
-        <Actions movie={movieData} />
+        <CardActions moveLeft={moveLeft} moveRight={moveRight} />
       </div>
     </motion.div>
   );
