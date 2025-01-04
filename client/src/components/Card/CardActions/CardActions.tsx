@@ -1,17 +1,14 @@
-import { useMoviesContext } from '../../../context/MoviesContext';
-import { Movie } from '../../../interfaces/movie.interface.';
 import c from './CardActions.module.scss';
 
 interface CardActionsProps {
-  movie: Movie;
+  moveLeft: () => void;
+  moveRight: () => void;
 }
 
-const CardActions: React.FC<CardActionsProps> = ({ movie }) => {
-  const { setMovieStatus } = useMoviesContext();
-
+const CardActions: React.FC<CardActionsProps> = ({ moveLeft, moveRight }) => {
   return (
     <div className={c.wrapper}>
-      <button onClick={() => setMovieStatus(movie, true)}>
+      <button onClick={moveLeft}>
         <img className="white-svg-icon" src="svg/card/love.svg" alt="love" />
       </button>
       {/* Just mock button */}
@@ -22,7 +19,7 @@ const CardActions: React.FC<CardActionsProps> = ({ movie }) => {
           alt="love"
         />
       </button>
-      <button onClick={() => setMovieStatus(movie, false)}>
+      <button onClick={moveRight}>
         <img
           className="white-svg-icon"
           src="svg/card/cancel2.svg"
