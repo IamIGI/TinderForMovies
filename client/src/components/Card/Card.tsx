@@ -13,8 +13,8 @@ import {
 const Card: React.FC<Movie> = ({ id, imageUrl, rating, summary, title }) => {
   const movieData = { id, imageUrl, rating, summary, title };
   const { setMovieStatus } = useMoviesContext();
-  //
-  const dragEnd = 700;
+
+  const dragEnd = 550;
   const position = useMotionValue(0);
   const opacity = useTransform(position, [-dragEnd, 0, dragEnd], [0.3, 1, 0.3]);
   const rotate = useTransform(position, [-dragEnd, dragEnd], [-30, 30]);
