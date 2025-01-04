@@ -1,38 +1,23 @@
-import { Dispatch, SetStateAction } from 'react';
+import { useMoviesContext } from '../../context/MoviesContext';
 import { Movie } from '../../interfaces/movie.interface.';
-import Actions from './Actions/Actions';
+import Actions from './CardActions/CardActions';
 import c from './Card.module.scss';
 import { motion, PanInfo, useMotionValue, useTransform } from 'framer-motion';
 
-interface CardProps extends Movie {
-  setMovies: Dispatch<SetStateAction<Movie[]>>;
-}
-
-const Card: React.FC<CardProps> = ({
-  id,
-  imageUrl,
-  rating,
-  summary,
-  title,
-  setMovies,
-}) => {
+const Card: React.FC<Movie> = ({ id, imageUrl, rating, summary, title }) => {
+  const movieData = { id, imageUrl, rating, summary, title };
+  const { setMovieStatus } = useMoviesContext();
+  //
   const dragEnd = 400;
   const position = useMotionValue(0);
-
   const opacity = useTransform(position, [-dragEnd, 0, dragEnd], [0.3, 1, 0.3]);
   const rotate = useTransform(position, [-dragEnd, dragEnd], [-30, 30]);
 
-  function updateCardsStack() {
-    setMovies((p) => p.filter((movie) => movie.id !== id));
-  }
-
   const handleDragEnd = (_: MouseEvent, info: PanInfo) => {
     if (info.offset.x > dragEnd) {
-      console.log('reject');
-      updateCardsStack();
+      setMovieStatus(movieData, false);
     } else if (info.offset.x < -dragEnd) {
-      console.log('accept');
-      updateCardsStack();
+      setMovieStatus(movieData, true);
     }
   };
 
@@ -66,7 +51,7 @@ const Card: React.FC<CardProps> = ({
           <h1>{title}</h1>
           <p>{summary}</p>
         </div>
-        <Actions />
+        <Actions movie={movieData} />
       </div>
     </motion.div>
   );

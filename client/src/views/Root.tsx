@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import Welcome from '../Pages/Welcome/Welcome';
-import Home from '../Pages/Home/Home';
+import Welcome from '../pages/Welcome/Welcome';
+import Home from '../pages/Home/Home';
 
 export enum NavigationLinks {
   Welcome = '/',
