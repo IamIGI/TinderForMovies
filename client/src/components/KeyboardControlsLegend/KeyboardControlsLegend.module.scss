@@ -1,10 +1,29 @@
 .wrapper {
   // outline: 2px solid orange;
-  height: 200px;
-  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 5%;
-  border-top: 1px solid #000;
+  gap: 3rem;
+  padding: 1rem 1rem;
+  // border-top: 1px solid #000;
+
+  background-color: var(--main-second-background-color);
+  border-radius: 15px;
+}
+
+.keyboard {
+  color: #a1a1a1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  img {
+    filter: invert(71%) sepia(4%) saturate(0%) hue-rotate(335deg)
+      brightness(90%) contrast(93%);
+    $size: 35px;
+    width: $size;
+    height: $size;
+  }
 }
