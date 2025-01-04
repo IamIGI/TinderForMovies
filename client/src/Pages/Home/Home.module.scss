@@ -1,7 +1,7 @@
 .wrapper {
   // outline: 1px solid red;
   width: 100%;
-  flex: 1;
+  height: 90vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -15,9 +15,9 @@
 }
 
 .content {
-  height: 95vh;
+  // outline: 1px solid black;
   width: 100%;
-
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

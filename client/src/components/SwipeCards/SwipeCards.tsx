@@ -1,18 +1,52 @@
+import { useEffect, useRef } from 'react';
 import { Movie } from '../../interfaces/movie.interface.';
-import Card from '../Card/Card';
+import Card, { CardRef } from '../Card/Card';
 import c from './SwipeCards.module.scss';
 
 interface SwipeCardsProps {
   moviesData: Movie[];
 }
 const SwipeCards: React.FC<SwipeCardsProps> = ({ moviesData }) => {
+  const lastCardRef = useRef<CardRef>(null);
+
+  const handleArrowsDown = (e: KeyboardEvent) => {
+    const lastCard = lastCardRef.current;
+    if (!lastCard) return;
+
+    switch (e.key) {
+      case 'ArrowLeft':
+        lastCard.moveLeft();
+        break;
+      case 'ArrowRight':
+        lastCard.moveRight();
+        break;
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleArrowsDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleArrowsDown);
+    };
+  });
+
   return (
     <div
       className={c.wrapper}
       // style={{ backgroundImage: `url(${movies[0].imageUrl})` }}
     >
-      {moviesData.map((movie) => {
-        return <Card key={movie.id} {...movie} />;
+      {moviesData.map((movie, i) => {
+        const isLastCard = i === moviesData.length - 1;
+        return (
+          <Card
+            key={movie.id}
+            {...movie}
+            ref={isLastCard ? lastCardRef : null}
+          />
+        );
       })}
     </div>
   );

@@ -9,12 +9,21 @@ import {
   useMotionValue,
   useTransform,
 } from 'framer-motion';
+import { forwardRef, Ref, useImperativeHandle } from 'react';
 
-const Card: React.FC<Movie> = ({ id, imageUrl, rating, summary, title }) => {
+export type CardRef = {
+  moveLeft: () => void;
+  moveRight: () => void;
+};
+
+const Card = (
+  { id, imageUrl, rating, summary, title }: Movie,
+  ref: Ref<CardRef>
+) => {
   const movieData = { id, imageUrl, rating, summary, title };
   const { setMovieStatus } = useMoviesContext();
-
-  const dragEnd = 550;
+  //
+  const dragEnd = 560;
   const position = useMotionValue(0);
   const opacity = useTransform(position, [-dragEnd, 0, dragEnd], [0.3, 1, 0.3]);
   const rotate = useTransform(position, [-dragEnd, dragEnd], [-30, 30]);
@@ -38,6 +47,11 @@ const Card: React.FC<Movie> = ({ id, imageUrl, rating, summary, title }) => {
       setMovieStatus(movieData, false);
     });
   };
+
+  useImperativeHandle(ref, () => ({
+    moveLeft,
+    moveRight,
+  }));
 
   return (
     <motion.div
@@ -75,4 +89,4 @@ const Card: React.FC<Movie> = ({ id, imageUrl, rating, summary, title }) => {
   );
 };
 
-export default Card;
+export default forwardRef(Card);
