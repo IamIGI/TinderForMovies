@@ -12,12 +12,7 @@ const MainTemplate: React.FC<{ children: ReactNode }> = ({ children }) => {
     <BrowserRouter>
       <NavBar handleMenuClick={() => {}} />
       {children}
-
       <SideMenu isVisible={false} onCloseCart={() => {}} />
-      {/* <CartPreview
-        isVisible={isCartVisible}
-        onCloseCart={() => setCartVisibility(false)}
-      /> */}
     </BrowserRouter>
   );
 };
