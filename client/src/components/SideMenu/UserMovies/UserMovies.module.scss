@@ -1,0 +1,39 @@
+$SideMenuWidth: 460px;
+
+.wrapper {
+  // outline: 1px solid red;
+  min-width: $SideMenuWidth;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.content {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+//Movie list component
+.movieList {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  img {
+    $size: 70px;
+    height: $size;
+    width: $size;
+    border-radius: 10px;
+  }
+}
