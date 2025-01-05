@@ -8,20 +8,24 @@ interface CardActionsProps {
 const CardActions: React.FC<CardActionsProps> = ({ moveLeft, moveRight }) => {
   return (
     <div className={c.wrapper}>
-      <button onClick={moveLeft}>
-        <img className="white-svg-icon" src="svg/card/love.svg" alt="love" />
+      <button onClick={moveLeft} className="hover-effect">
+        <img
+          className="white-svg-icon hover-effect"
+          src="svg/card/love.svg"
+          alt="love"
+        />
       </button>
       {/* Just mock button */}
-      <button>
+      <button className="hover-effect">
         <img
-          className="white-svg-icon"
+          className="white-svg-icon hover-effect "
           src="svg/card/playPause.svg"
           alt="love"
         />
       </button>
-      <button onClick={moveRight}>
+      <button onClick={moveRight} className="hover-effect">
         <img
-          className="white-svg-icon"
+          className="white-svg-icon hover-effect"
           src="svg/card/cancel2.svg"
           alt="cancel"
         />

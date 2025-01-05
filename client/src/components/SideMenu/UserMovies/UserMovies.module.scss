@@ -30,13 +30,6 @@ $SideMenuWidth: 460px;
   flex-wrap: wrap;
   gap: 1rem;
 
-  button {
-    transition: all 0.2s;
-    &:hover {
-      scale: 1.25;
-    }
-  }
-
   img {
     $size: 70px;
     height: $size;

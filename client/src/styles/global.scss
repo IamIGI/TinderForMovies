@@ -70,3 +70,14 @@ textarea {
   filter: invert(55%) sepia(0%) saturate(453%) hue-rotate(148deg)
     brightness(91%) contrast(82%);
 }
+
+.accent-svg-icon {
+  filter: var(--main-icon-color);
+}
+
+.hover-effect {
+  transition: all 0.2s;
+  &:hover {
+    scale: 1.2;
+  }
+}

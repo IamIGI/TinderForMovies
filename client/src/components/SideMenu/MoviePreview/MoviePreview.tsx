@@ -11,8 +11,12 @@ const MoviePreview: React.FC<MoviePreviewProps> = ({ movie, handleGoBack }) => {
 
   return (
     <div className={c.wrapper}>
-      <button onClick={handleGoBack}>
-        <img src="/svg/sideMenu/back.svg" alt="back" />
+      <button className="hover-effect" onClick={handleGoBack}>
+        <img
+          className="hover-effect accent-svg-icon"
+          src="/svg/sideMenu/back.svg"
+          alt="back"
+        />
       </button>
       <img src={movie.imageUrl} alt="movie" />
       <h1>

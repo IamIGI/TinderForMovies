@@ -15,11 +15,6 @@
     $size: 56px;
     height: $size;
     width: $size;
-    transition: all 0.2s;
-
-    &:hover {
-      scale: 1.25;
-    }
 
     img {
       width: calc($size - 17px);

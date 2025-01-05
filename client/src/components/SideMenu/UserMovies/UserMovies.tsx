@@ -45,6 +45,7 @@ const MovieList: React.FC<MovieListProps> = ({
     <div className={c.movieList}>
       {movies.map((movie) => (
         <motion.button
+          className="hover-effect"
           key={movie.id}
           initial={{ scale: 1.4, opacity: 0 }}
           animate={{ scale: 1.0, opacity: 1 }}

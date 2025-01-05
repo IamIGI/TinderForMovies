@@ -54,7 +54,6 @@ nav {
       $size: 40px;
       width: $size;
       height: $size;
-      filter: var(--main-icon-color);
     }
   }
 
@@ -75,28 +74,23 @@ nav {
       display: flex;
       justify-content: center;
       align-items: center;
-
-      transition: all 0.2s;
-      &:hover {
-        scale: 1.25;
-      }
       img {
         $size: 60%;
         width: $size;
         height: $size;
-        filter: var(--main-icon-color);
       }
     }
-    img {
-      cursor: pointer;
-      transition: all 0.2s;
-      &:hover {
-        scale: 1.25;
-      }
-      border-radius: 50%;
+
+    .logoButton {
       $size: 50px;
       width: $size;
       height: $size;
+      border-radius: 50%;
+      img {
+        border-radius: 50%;
+        width: $size;
+        height: $size;
+      }
     }
   }
 }

@@ -22,16 +22,10 @@
     justify-content: center;
     align-items: center;
 
-    transition: all 0.2s;
-    &:hover {
-      scale: 1.25;
-    }
-
     img {
       $size: 60%;
       width: $size;
       height: $size;
-      filter: var(--main-icon-color);
     }
   }
 

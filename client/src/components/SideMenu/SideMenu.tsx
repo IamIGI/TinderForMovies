@@ -46,7 +46,7 @@ const SideMenu: React.FC<SideMenuProps> = () => {
     <div className={c.wrapper}>
       <nav>
         <div className={c.leftWrapper}>
-          <img src="/svg/logo.svg" alt="logo" />
+          <img className="accent-svg-icon" src="/svg/logo.svg" alt="logo" />
           <h2>
             <span>Tinder</span>
             <br />
@@ -55,10 +55,20 @@ const SideMenu: React.FC<SideMenuProps> = () => {
         </div>
         <div className={c.rightWrapper}>
           {/* Mock button */}
-          <button>
-            <img src="/svg/sideMenu/settings.svg" alt="settings" />{' '}
+          <button className="hover-effect">
+            <img
+              className="hover-effect accent-svg-icon"
+              src="/svg/sideMenu/settings.svg"
+              alt="settings"
+            />
           </button>
-          <img src="/images/profile.JPG" alt="profile" />
+          <button className={`${c.logoButton} hover-effect`}>
+            <img
+              className="hover-effect"
+              src="/images/profile.JPG"
+              alt="profile"
+            />
+          </button>
         </div>
       </nav>
       <div className={c.contentWrapper} ref={contentRef}>
