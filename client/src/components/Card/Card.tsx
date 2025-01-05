@@ -10,6 +10,7 @@ import {
   useTransform,
 } from 'framer-motion';
 import { forwardRef, Ref, useImperativeHandle, useRef } from 'react';
+import numberUtils from '../../utils/number.utils';
 
 export type CardRef = {
   moveLeft: () => void;
@@ -79,7 +80,7 @@ const Card = (
             src="svg/card/star.svg"
             alt={'rate'}
           />
-          <h2>{rating}</h2>
+          <h2>{numberUtils.formatNumberWithDecimal(rating)}</h2>
         </div>
       </div>
       <div className={c.downContent}>
