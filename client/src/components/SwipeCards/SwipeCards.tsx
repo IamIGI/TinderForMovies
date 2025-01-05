@@ -39,7 +39,7 @@ const SwipeCards: React.FC<SwipeCardsProps> = ({ moviesData }) => {
   return (
     <div
       className={c.wrapper}
-      // style={{ backgroundImage: `url(${movies[0].imageUrl})` }}
+      // style={{ backgroundImage: `url(${moviesData[0].imageUrl})` }}
     >
       {moviesData.map((movie, i) => {
         const isLastCard = i === moviesData.length - 1;
