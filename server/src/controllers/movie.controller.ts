@@ -59,4 +59,13 @@ function updateMovieStatus(req: Request, res: Response) {
   }
 }
 
-export default { getMovies, getUserMovies, updateMovieStatus };
+function resetMovies(req: Request, res: Response) {
+  try {
+    movieService.resetDB();
+    res.status(200).json({ status: 'success' });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+}
+
+export default { getMovies, getUserMovies, updateMovieStatus, resetMovies };
