@@ -1,5 +1,5 @@
 .wrapper {
-  min-width: 460px;
+  min-width: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,7 @@
 
   h1 {
     span {
+      padding-left: 10px;
       color: var(--main-accent-color);
     }
   }
@@ -32,5 +33,18 @@
   img {
     border-radius: 30px;
     // height: 300px;
+  }
+
+  @media (max-width: 920px) {
+    img {
+      border-radius: 30px;
+      height: 50vh;
+    }
+  }
+
+  @media (max-width: 450px) {
+    h1 {
+      line-height: 30px;
+    }
   }
 }

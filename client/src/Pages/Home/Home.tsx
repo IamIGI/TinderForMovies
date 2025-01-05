@@ -2,17 +2,27 @@ import KeyboardControlsLegend from '../../components/KeyboardControlsLegend/Keyb
 import SwipeCards from '../../components/SwipeCards/SwipeCards';
 import c from './Home.module.scss';
 import { useMoviesContext } from '../../context/MoviesContext';
-import SideMenu from '../../components/SideMenu/SideMenu';
+import Menu from '../../components/Menu/Menu';
+import Navigation from '../../components/Menu/Navigation/Navigation';
+import { useToggleState } from '../../hooks/useToggleState';
 
 const Home = () => {
+  const [isMenuVisible, toggleMenuVisibility, setMenuVisibility] =
+    useToggleState(window.innerWidth > 920);
   const { movies } = useMoviesContext();
 
   return (
     <div className={c.wrapper}>
-      <SideMenu isVisible={false} onCloseCart={() => {}} />
+      <Menu
+        isMenuVisible={isMenuVisible}
+        setMenuVisibility={setMenuVisibility}
+      />
       <div className={c.content}>
         <SwipeCards moviesData={movies} />
         <KeyboardControlsLegend />
+        <div className={c.mobileMenu}>
+          <Navigation toggleMenuVisibility={toggleMenuVisibility} />
+        </div>
       </div>
     </div>
   );

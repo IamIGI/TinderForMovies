@@ -1,8 +1,9 @@
-$SideMenuWidth: 460px;
+$size: 70px;
 
 .wrapper {
   // outline: 1px solid red;
-  min-width: $SideMenuWidth;
+  min-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -23,6 +24,8 @@ $SideMenuWidth: 460px;
 
 //Movie list component
 .movieList {
+  height: 100%;
+  min-height: $size;
   flex: 1;
   display: flex;
   justify-content: flex-start;
@@ -31,7 +34,6 @@ $SideMenuWidth: 460px;
   gap: 1rem;
 
   img {
-    $size: 70px;
     height: $size;
     width: $size;
     border-radius: 10px;
