@@ -10,6 +10,13 @@
 
   background-color: var(--main-second-background-color);
   border-radius: 15px;
+  @media (max-width: 920px) {
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 }
 
 .keyboard {

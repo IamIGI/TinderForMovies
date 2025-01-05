@@ -27,6 +27,12 @@ $radius: 30px;
   &:active {
     cursor: grab;
   }
+
+  @media (max-width: 450px) {
+    width: 350px;
+    height: 80vh;
+    max-height: 680px;
+  }
 }
 
 .ratingWrapper {
