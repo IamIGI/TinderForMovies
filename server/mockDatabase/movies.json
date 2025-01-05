@@ -1,5 +1,12 @@
 [
   {
+    "id": "tt0111161",
+    "imageUrl": "https: //m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_.jpg",
+    "title": "The Shawshank Redemption",
+    "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "rating": 9.3
+  },
+  {
     "id": "tt0068646",
     "imageUrl": "https: //m.media-amazon.com/images/M/MV5BYTJkNGQyZDgtZDQ0NC00MDM0LWEzZWQtYzUzZDEwMDljZWNjXkEyXkFqcGc@._V1_.jpg",
     "title": "The Godfather",

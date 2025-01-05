@@ -2,14 +2,22 @@ import path from 'path';
 import { MovieStatus, PaginatedMovieData } from '../interfaces/movie.interface';
 import filesUtils from '../utils/files.utils';
 
-const MOVIES_FILE_PATH = path.join(__dirname, '../mockDatabase/movies.json');
+const DB_FOLDER_FILE_PATH = '../../mockDatabase';
+const MOVIES_FILE_PATH = path.join(
+  __dirname,
+  `${DB_FOLDER_FILE_PATH}/movies.json`
+);
 const LIKED_MOVIES_FILE_PATH = path.join(
   __dirname,
-  '../mockDatabase/likedMovies.json'
+  `${DB_FOLDER_FILE_PATH}/likedMovies.json`
 );
 const DISLIKED_MOVIES_FILE_PATH = path.join(
   __dirname,
-  '../mockDatabase/dislikedMovies.json'
+  `${DB_FOLDER_FILE_PATH}/dislikedMovies.json`
+);
+const INIT_MOVIES_FILE_PATH = path.join(
+  __dirname,
+  `${DB_FOLDER_FILE_PATH}/initMovies.json`
 );
 
 function getUserMovies() {
@@ -87,8 +95,16 @@ function updateMovieStatus(movieId: string, status: MovieStatus) {
   return updatedMovieList;
 }
 
+function resetDB() {
+  const initMoviesData = filesUtils.readJSONFile(INIT_MOVIES_FILE_PATH);
+  filesUtils.writeJSONFile(MOVIES_FILE_PATH, initMoviesData);
+  filesUtils.removeJSONFile(LIKED_MOVIES_FILE_PATH);
+  filesUtils.removeJSONFile(DISLIKED_MOVIES_FILE_PATH);
+}
+
 export default {
   getMoviesWithPagination,
   updateMovieStatus,
   getUserMovies,
+  resetDB,
 };
