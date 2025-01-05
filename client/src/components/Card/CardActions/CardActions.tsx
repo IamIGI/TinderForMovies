@@ -1,14 +1,17 @@
 import c from './CardActions.module.scss';
 
 interface CardActionsProps {
-  moveLeft: () => void;
-  moveRight: () => void;
+  addMovieToLiked: () => void;
+  addMovieToDisliked: () => void;
 }
 
-const CardActions: React.FC<CardActionsProps> = ({ moveLeft, moveRight }) => {
+const CardActions: React.FC<CardActionsProps> = ({
+  addMovieToLiked,
+  addMovieToDisliked,
+}) => {
   return (
     <div className={c.wrapper}>
-      <button onClick={moveLeft} className="hover-effect">
+      <button onClick={addMovieToLiked} className="hover-effect">
         <img
           className="white-svg-icon hover-effect"
           src="svg/card/love.svg"
@@ -23,7 +26,7 @@ const CardActions: React.FC<CardActionsProps> = ({ moveLeft, moveRight }) => {
           alt="love"
         />
       </button>
-      <button onClick={moveRight} className="hover-effect">
+      <button onClick={addMovieToDisliked} className="hover-effect">
         <img
           className="white-svg-icon hover-effect"
           src="svg/card/cancel2.svg"

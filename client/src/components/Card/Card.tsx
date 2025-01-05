@@ -9,12 +9,12 @@ import {
   useMotionValue,
   useTransform,
 } from 'framer-motion';
-import { forwardRef, Ref, useImperativeHandle, useRef } from 'react';
+import { forwardRef, Ref, useImperativeHandle, useRef, useState } from 'react';
 import numberUtils from '../../utils/number.utils';
 
 export type CardRef = {
-  moveLeft: () => void;
-  moveRight: () => void;
+  addMovieToLiked: () => void;
+  addMovieToDisliked: () => void;
   id: string;
 };
 
@@ -24,8 +24,9 @@ const Card = (
 ) => {
   const movieData = { id, imageUrl, rating, summary, title };
   const { setMovieStatus } = useMoviesContext();
+  const [lastCardId, setLastCardId] = useState<string | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-  //
+
   const dragEnd = 560;
   const position = useMotionValue(0);
   const opacity = useTransform(position, [-dragEnd, 0, dragEnd], [0.3, 1, 0.3]);
@@ -39,21 +40,31 @@ const Card = (
     }
   };
 
-  const moveLeft = () => {
+  const isTheSameCard = () => {
+    if (lastCardId === movieData.id) return true;
+    setLastCardId(movieData.id);
+    return false;
+  };
+
+  const addMovieToLiked = () => {
+    if (isTheSameCard()) return;
+
     animate(position, -dragEnd, { duration: 0.5 }).then(() => {
       setMovieStatus(movieData, true);
     });
   };
 
-  const moveRight = () => {
+  const addMovieToDisliked = () => {
+    if (isTheSameCard()) return;
+
     animate(position, dragEnd, { duration: 0.5 }).then(() => {
       setMovieStatus(movieData, false);
     });
   };
 
   useImperativeHandle(ref, () => ({
-    moveLeft,
-    moveRight,
+    addMovieToLiked,
+    addMovieToDisliked,
     id: cardRef.current?.id || '',
   }));
 
@@ -88,7 +99,10 @@ const Card = (
           <h1>{title}</h1>
           <p>{summary}</p>
         </div>
-        <CardActions moveLeft={moveLeft} moveRight={moveRight} />
+        <CardActions
+          addMovieToLiked={addMovieToLiked}
+          addMovieToDisliked={addMovieToDisliked}
+        />
       </div>
     </motion.div>
   );
