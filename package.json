@@ -1,0 +1,13 @@
+{
+    "name": "tinder-for-movies-app",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev:app": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+        "build:app": "npm run build --prefix server && npm run build --prefix client",
+        "prod:app": "concurrently \"npm run prod --prefix server\" \"npm run preview --prefix client\""
+    },
+    "devDependencies": {
+        "concurrently": "^8.0.1"
+    }
+}
