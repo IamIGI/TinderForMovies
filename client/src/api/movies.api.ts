@@ -27,7 +27,7 @@ async function fetchMovies(
 ): Promise<MovieDataResponse> {
   let url = BASE_URL;
   if (payload) {
-    url = `${BASE_URL}?from=${payload.from}&amount=${payload.amount}`;
+    url = `${BASE_URL}?space=${payload.space}&amount=${payload.amount}`;
   }
 
   return fetchData(url);

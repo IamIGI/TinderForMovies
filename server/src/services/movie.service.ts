@@ -1,5 +1,8 @@
 import path from 'path';
-import { MovieStatus, PaginatedMovieData } from '../interfaces/movie.interface';
+import {
+  MovieStatus,
+  PaginatedMoviesData,
+} from '../interfaces/movie.interface';
 import filesUtils from '../utils/files.utils';
 
 const DB_FOLDER_FILE_PATH = '../../mockDatabase';
@@ -30,25 +33,31 @@ function getUserMovies() {
   };
 }
 
-function getMoviesWithPagination(
-  from: number,
+function getMoviesWithingRange(
+  space: number | undefined,
   amount: number | undefined
-): PaginatedMovieData {
-  const tinderMovies = filesUtils.readJSONFile(MOVIES_FILE_PATH);
-  const startIndex = Math.max(0, from);
+): PaginatedMoviesData {
+  const moviesDB = filesUtils.readJSONFile(MOVIES_FILE_PATH);
+  const likedMovies = filesUtils.readJSONFile(LIKED_MOVIES_FILE_PATH);
+  const dislikedMovies = filesUtils.readJSONFile(DISLIKED_MOVIES_FILE_PATH);
+
+  const startIndex = space
+    ? likedMovies.length + dislikedMovies.length + space
+    : likedMovies.length + dislikedMovies.length;
+
   const endIndex =
     amount !== undefined
-      ? Math.min(startIndex + amount, tinderMovies.length)
-      : tinderMovies.length;
+      ? Math.min(startIndex + amount, moviesDB.length)
+      : moviesDB.length;
 
-  const moviesInRange = tinderMovies.slice(startIndex, endIndex);
+  const moviesInRange = moviesDB.slice(startIndex, endIndex);
+  const reversedList = moviesInRange.reverse();
 
   return {
     from: startIndex,
-    to: endIndex,
-    length: moviesInRange.length,
-    totalMovies: tinderMovies.length,
-    movies: moviesInRange,
+    amount: amount,
+    totalMovies: reversedList.length,
+    movies: reversedList,
   };
 }
 
@@ -76,7 +85,7 @@ function updateMovieStatus(movieId: string, status: MovieStatus) {
       break;
     case MovieStatus.DisLiked:
       dislikedMovies.push(selectedMovie);
-      filesUtils.writeJSONFile(DISLIKED_MOVIES_FILE_PATH, likedMovies);
+      filesUtils.writeJSONFile(DISLIKED_MOVIES_FILE_PATH, dislikedMovies);
       updatedMovieList = dislikedMovies;
       break;
     default:
@@ -89,21 +98,22 @@ function updateMovieStatus(movieId: string, status: MovieStatus) {
   }
 
   //DANGER ZONE - remove item from DB;
-  tinderMovies.splice(selectedMovieIndex, 1);
-  filesUtils.writeJSONFile(MOVIES_FILE_PATH, tinderMovies);
+  // const removedElement = tinderMovies.splice(selectedMovieIndex, 1);
+  // console.log(removedElement);
+  // filesUtils.writeJSONFile(MOVIES_FILE_PATH, tinderMovies);
 
   return updatedMovieList;
 }
 
 function resetDB() {
-  const initMoviesData = filesUtils.readJSONFile(INIT_MOVIES_FILE_PATH);
-  filesUtils.writeJSONFile(MOVIES_FILE_PATH, initMoviesData);
+  // const initMoviesData = filesUtils.readJSONFile(INIT_MOVIES_FILE_PATH);
+  // filesUtils.writeJSONFile(MOVIES_FILE_PATH, initMoviesData);
   filesUtils.removeJSONFile(LIKED_MOVIES_FILE_PATH);
   filesUtils.removeJSONFile(DISLIKED_MOVIES_FILE_PATH);
 }
 
 export default {
-  getMoviesWithPagination,
+  getMoviesWithingRange,
   updateMovieStatus,
   getUserMovies,
   resetDB,

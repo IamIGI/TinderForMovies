@@ -4,12 +4,14 @@ import { MovieStatus } from '../interfaces/movie.interface';
 
 function getMovies(req: Request, res: Response) {
   try {
-    const from = req.query.from ? parseInt(req.query.from as string, 10) : 0;
+    const space = req.query.space
+      ? parseInt(req.query.space as string, 10) //radix- interpreted as decimal number
+      : undefined;
     const amount = req.query.amount
       ? parseInt(req.query.amount as string, 10) //radix- interpreted as decimal number
       : undefined;
 
-    const movies = movieService.getMoviesWithPagination(from, amount);
+    const movies = movieService.getMoviesWithingRange(space, amount);
 
     res.status(200).json(movies);
   } catch (err: any) {

@@ -6,10 +6,9 @@ export interface Movie {
   rating: number;
 }
 
-export interface PaginatedMovieData {
+export interface PaginatedMoviesData {
   from: number;
-  to: number;
-  length: number;
+  amount: number | undefined;
   totalMovies: number;
   movies: Movie[];
 }
