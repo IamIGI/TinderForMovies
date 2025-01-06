@@ -61,6 +61,7 @@ This command will:
 ## 5.App
 The application consists of a **server (backend)** and **client (frontend)** that communicate with each other.
 WebPage: https://igitest.pl/ 
+Project board: https://github.com/users/IamIGI/projects/15/views/1 
 # Tinder for Movies App - Main Functionalities
 
 - **Server (Express, Local Database)**: 
