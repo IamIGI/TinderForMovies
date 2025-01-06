@@ -3,8 +3,8 @@ import Welcome from '../pages/Welcome/Welcome';
 import Home from '../pages/Home/Home';
 
 export enum NavigationLinks {
-  Welcome = '/',
-  Home = '/home',
+  Welcome = '/welcome',
+  Home = '/',
 }
 
 const Root = () => {
