@@ -24,7 +24,6 @@ const Menu: React.FC<MenuProps> = ({ setMenuVisibility, isMenuVisible }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      console.log('triggered');
       if (window.innerWidth <= 920 && !hasMenuBeenHidden) {
         resetToMovieLists();
         setHasMenuBeenHidden(true); // Mark as hidden
