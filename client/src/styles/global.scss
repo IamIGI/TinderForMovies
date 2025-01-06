@@ -80,4 +80,10 @@ textarea {
   &:hover {
     scale: 1.2;
   }
+
+  @media (max-width: 500px) {
+    &:hover {
+      scale: 1;
+    }
+  }
 }
