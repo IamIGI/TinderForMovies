@@ -1,4 +1,5 @@
 import { Movie } from '../../../interfaces/movie.interface.';
+import Loading from '../../Loading/Loading';
 import c from './UserMovies.module.scss';
 import { motion } from 'framer-motion';
 
@@ -6,6 +7,7 @@ interface UserMoviesProps {
   likedMovies: Movie[];
   dislikedMovies: Movie[];
   handleSelectedMovie: (movie: Movie) => void;
+  isDataFetching: boolean;
 }
 interface MovieListProps {
   movies: Movie[];
@@ -16,23 +18,32 @@ const UserMovies: React.FC<UserMoviesProps> = ({
   likedMovies,
   dislikedMovies,
   handleSelectedMovie,
+  isDataFetching,
 }) => {
   return (
     <div className={c.wrapper}>
-      <div className={c.content}>
-        <h2>Liked</h2>
-        <MovieList
-          movies={likedMovies}
-          handleSelectedMovie={handleSelectedMovie}
-        />
-      </div>
-      <div className={c.content}>
-        <h2>Disliked</h2>
-        <MovieList
-          movies={dislikedMovies}
-          handleSelectedMovie={handleSelectedMovie}
-        />
-      </div>
+      {isDataFetching ? (
+        <div className={c.loadingWrapper}>
+          <Loading />
+        </div>
+      ) : (
+        <>
+          <div className={c.content}>
+            <h2>Liked</h2>
+            <MovieList
+              movies={likedMovies}
+              handleSelectedMovie={handleSelectedMovie}
+            />
+          </div>
+          <div className={c.content}>
+            <h2>Disliked</h2>
+            <MovieList
+              movies={dislikedMovies}
+              handleSelectedMovie={handleSelectedMovie}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -114,7 +114,7 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const refetchMovies = async (payload: FetchMovieRequest) => {
-    setIsMoviesLoading(true);
+    // setIsMoviesLoading(true);
     setIsMoviesError(false); // Reset error state on each refetch
 
     try {
@@ -132,7 +132,7 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
       console.error('Failed to refetch movies:', error);
       setIsMoviesError(true);
     } finally {
-      setIsMoviesLoading(false);
+      // setIsMoviesLoading(false);
     }
   };
 
