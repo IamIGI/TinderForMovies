@@ -14,7 +14,7 @@ export interface MoviesContextInterface {
     isError: boolean;
     data: UserMovieDataResponse;
   };
-  setMovieStatus: (movie: Movie, isMovieLiked: boolean) => void;
+  setMovieStatus: (movie: Movie, isMovieLiked: boolean) => Promise<void>;
   resetApp: () => void;
 }
 
@@ -82,9 +82,8 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const setMovieStatus = async (movie: Movie, isMovieLiked: boolean) => {
     const updatedMoviesDataArray = moviesData.filter((m) => m.id !== movie.id);
     setMoviesData(updatedMoviesDataArray);
-    //When updated check for number of movie items in the list, and refetch again if necessary
-    const updatedUserMovies = { ...userMoviesData };
 
+    const updatedUserMovies = { ...userMoviesData };
     if (isMovieLiked) {
       updatedUserMovies.liked = [...updatedUserMovies.liked, movie];
     } else {
@@ -103,7 +102,7 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
       });
 
     if (updatedMoviesDataArray.length === MOVIES_LEFT_BEFORE_REFETCH) {
-      refetchMovies({
+      await refetchMovies({
         space: MOVIES_LEFT_BEFORE_REFETCH,
         amount: MOVIES_FETCH_AMOUNT,
       });

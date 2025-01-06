@@ -27,11 +27,11 @@ const Card = (
   const rotate = useTransform(position, [-dragEnd, dragEnd], [-20, 20]);
   const scale = useTransform(position, [-dragEnd, 0, dragEnd], [0.7, 1, 0.7]);
 
-  const handleDragEnd = () => {
+  const handleDragEnd = async () => {
     if (position.get() > dragEnd) {
-      setMovieStatus(movieData, false);
+      await setMovieStatus(movieData, false);
     } else if (position.get() < -dragEnd) {
-      setMovieStatus(movieData, true);
+      await setMovieStatus(movieData, true);
     }
   };
 
@@ -41,20 +41,19 @@ const Card = (
     return false;
   };
 
-  const addMovieToLiked = () => {
-    console.log('t1');
+  const addMovieToLiked = async () => {
     if (isTheSameCard()) return;
 
-    animate(position, -dragEnd - 100, { duration: 0.3 }).then(() => {
-      setMovieStatus(movieData, true);
+    animate(position, -dragEnd - 100, { duration: 0.3 }).then(async () => {
+      await setMovieStatus(movieData, true);
     });
   };
 
   const addMovieToDisliked = () => {
     if (isTheSameCard()) return;
 
-    animate(position, dragEnd + 100, { duration: 0.3 }).then(() => {
-      setMovieStatus(movieData, false);
+    animate(position, dragEnd + 100, { duration: 0.3 }).then(async () => {
+      await setMovieStatus(movieData, false);
     });
   };
 
