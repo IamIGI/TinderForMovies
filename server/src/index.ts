@@ -1,5 +1,5 @@
 import path from 'path';
-import express, { Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import corsOptions from './config/corsOptions';
 
@@ -13,6 +13,11 @@ const PORT = 3000;
 app.use(cors(corsOptions));
 // app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
 
 // Routes
 app.use('/movies', require('./routes/api/movie.route'));
