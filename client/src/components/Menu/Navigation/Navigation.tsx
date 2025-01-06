@@ -25,6 +25,7 @@ const Navigation: React.FC<NavigationProps> = ({ toggleMenuVisibility }) => {
           />
         </button>
         <button
+          data-testid="toggle-menu"
           className={`${c.mobileMenuButton} hover-effect`}
           onClick={toggleMenuVisibility}
         >

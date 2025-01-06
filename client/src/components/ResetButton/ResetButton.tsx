@@ -6,7 +6,11 @@ interface ResetButtonProps {
 
 const ResetButton: React.FC<ResetButtonProps> = ({ resetApp }) => {
   return (
-    <button className={`${c.resetButton} hover-effect`} onClick={resetApp}>
+    <button
+      role="button"
+      className={`${c.resetButton} hover-effect`}
+      onClick={resetApp}
+    >
       <img
         className="white-svg-icon hover-effect"
         src="/svg/buttons/reset.svg"

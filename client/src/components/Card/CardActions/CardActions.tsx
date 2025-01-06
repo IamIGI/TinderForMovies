@@ -26,7 +26,11 @@ const CardActions: React.FC<CardActionsProps> = ({
           alt="love"
         />
       </button>
-      <button onClick={addMovieToDisliked} className="hover-effect">
+      <button
+        aria-role="reject"
+        onClick={addMovieToDisliked}
+        className="hover-effect"
+      >
         <img
           className="white-svg-icon hover-effect"
           src="svg/card/cancel2.svg"
