@@ -1,0 +1,23 @@
+[
+  {
+    "id": "tt0114709",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BZTA3OWVjOWItNjE1NS00NzZiLWE1MjgtZDZhMWI1ZTlkNzYwXkEyXkFqcGc@._V1_.jpg",
+    "title": "Toy Story",
+    "summary": "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boys room.",
+    "rating": 8.3
+  },
+  {
+    "id": "tt15239678",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_.jpg",
+    "title": "Dune: Part Two",
+    "summary": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
+    "rating": 9
+  },
+  {
+    "id": "tt0110357",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BZGRiZDZhZjItM2M3ZC00Y2IyLTk3Y2MtMWY5YjliNDFkZTJlXkEyXkFqcGc@._V1_.jpg",
+    "title": "The Lion King",
+    "summary": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+    "rating": 8.5
+  }
+]

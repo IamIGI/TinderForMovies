@@ -7,6 +7,7 @@ interface SwipeCardsProps {
   moviesData: Movie[];
 }
 const SwipeCards: React.FC<SwipeCardsProps> = ({ moviesData }) => {
+  console.log(moviesData);
   const lastCardRef = useRef<CardRef>(null);
 
   const handleArrowsDown = (e: KeyboardEvent) => {
@@ -31,7 +32,7 @@ const SwipeCards: React.FC<SwipeCardsProps> = ({ moviesData }) => {
     return () => {
       window.removeEventListener('keydown', handleArrowsDown);
     };
-  });
+  }, []);
 
   return (
     <div

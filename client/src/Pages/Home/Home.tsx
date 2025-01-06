@@ -18,7 +18,7 @@ const Home = () => {
         setMenuVisibility={setMenuVisibility}
       />
       <div className={c.content}>
-        <SwipeCards moviesData={movies} />
+        <SwipeCards moviesData={movies.data} />
         <KeyboardControlsLegend />
         <div className={c.mobileMenu}>
           <Navigation toggleMenuVisibility={toggleMenuVisibility} />
