@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
-import { Movie } from '../../interfaces/movie.interface.';
 import Card, { CardRef } from '../Card/Card';
 import c from './SwipeCards.module.scss';
+import Loading from '../Loading/Loading';
+import { useMoviesContext } from '../../context/MoviesContext';
 
-interface SwipeCardsProps {
-  moviesData: Movie[];
-}
-const SwipeCards: React.FC<SwipeCardsProps> = ({ moviesData }) => {
-  console.log(moviesData);
+const SwipeCards = () => {
+  const {
+    movies: { data, isLoading },
+  } = useMoviesContext();
   const lastCardRef = useRef<CardRef>(null);
 
   const handleArrowsDown = (e: KeyboardEvent) => {
@@ -35,20 +35,21 @@ const SwipeCards: React.FC<SwipeCardsProps> = ({ moviesData }) => {
   }, []);
 
   return (
-    <div
-      className={c.wrapper}
-      // style={{ backgroundImage: `url(${moviesData[0].imageUrl})` }}
-    >
-      {moviesData.map((movie, i) => {
-        const isLastCard = i === moviesData.length - 1;
-        return (
-          <Card
-            key={movie.id}
-            {...movie}
-            ref={isLastCard ? lastCardRef : null}
-          />
-        );
-      })}
+    <div className={c.wrapper}>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        data.map((movie, i) => {
+          const isLastCard = i === data.length - 1;
+          return (
+            <Card
+              key={movie.id}
+              {...movie}
+              ref={isLastCard ? lastCardRef : null}
+            />
+          );
+        })
+      )}
     </div>
   );
 };

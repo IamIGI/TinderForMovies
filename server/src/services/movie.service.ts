@@ -18,10 +18,6 @@ const DISLIKED_MOVIES_FILE_PATH = path.join(
   __dirname,
   `${DB_FOLDER_FILE_PATH}/dislikedMovies.json`
 );
-const INIT_MOVIES_FILE_PATH = path.join(
-  __dirname,
-  `${DB_FOLDER_FILE_PATH}/initMovies.json`
-);
 
 function getUserMovies() {
   const likedMovies = filesUtils.readJSONFile(LIKED_MOVIES_FILE_PATH);

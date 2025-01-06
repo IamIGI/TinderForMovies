@@ -1,12 +1,5 @@
 [
   {
-    "id": "tt0111161",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_.jpg",
-    "title": "The Shawshank Redemption",
-    "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-    "rating": 9.3
-  },
-  {
     "id": "tt0050083",
     "imageUrl": "https://m.media-amazon.com/images/M/MV5BYjE4NzdmOTYtYjc5Yi00YzBiLWEzNDEtNTgxZGQ2MWVkN2NiXkEyXkFqcGc@._V1_.jpg",
     "title": "12 Angry Men",
@@ -28,17 +21,17 @@
     "rating": 8.9
   },
   {
-    "id": "tt0110912",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_.jpg",
-    "title": "Pulp Fiction",
-    "summary": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-    "rating": 8.9
-  },
-  {
     "id": "tt0120737",
     "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_.jpg",
     "title": "The Lord of the Rings: The Fellowship of the Ring",
     "summary": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+    "rating": 8.8
+  },
+  {
+    "id": "tt0137523",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_.jpg",
+    "title": "Fight Club",
+    "summary": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
     "rating": 8.8
   },
   {
@@ -54,54 +47,5 @@
     "title": "Saving Private Ryan",
     "summary": "Following the Normandy landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
     "rating": 8.6
-  },
-  {
-    "id": "tt0102926",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNDdhOGJhYzctYzYwZC00YmI2LWI0MjctYjg4ODdlMDExYjBlXkEyXkFqcGc@._V1_.jpg",
-    "title": "The Silence of the Lambs",
-    "summary": "A young F.B.I. cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims.",
-    "rating": 8.6
-  },
-  {
-    "id": "tt0317248",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYjY4NGI5OTUtY2ZlZS00Zjk4LTk5N2MtN2JmYWVjNGNmMGRlXkEyXkFqcGc@._V1_.jpg",
-    "title": "City of God",
-    "summary": "In the slums of Rio, two kids paths diverge as one struggles to become a photographer and the other a kingpin.",
-    "rating": 8.6
-  },
-  {
-    "id": "tt0118799",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BZTBhOGYzZjQtYzE0Mi00MGIwLWE0MWYtNzMxNTM2OTFkM2NjXkEyXkFqcGc@._V1_.jpg",
-    "title": "Life Is Beautiful",
-    "summary": "When an open-minded Jewish librarian and his son become victims of the Holocaust, he uses a perfect mixture of will, humor, and imagination to protect his son from the dangers around their camp.",
-    "rating": 8.6
-  },
-  {
-    "id": "tt0114369",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BY2IzNzMxZjctZjUxZi00YzAxLTk3ZjMtODFjODdhMDU5NDM1XkEyXkFqcGc@._V1_.jpg",
-    "title": "Se7en",
-    "summary": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.",
-    "rating": 8.6
-  },
-  {
-    "id": "tt0076759",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNWEwOTI0MmUtMGNmNy00ODViLTlkZDQtZTg1YmQ3MDgyNTUzXkEyXkFqcGc@._V1_.jpg",
-    "title": "Star Wars: Episode IV - A New Hope",
-    "summary": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee, and two droids to save the galaxy from the Empires world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
-    "rating": 8.5
-  },
-  {
-    "id": "tt0103064",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNGMyMGNkMDUtMjc2Ni00NWFlLTgyODEtZTY2MzBiZTg0OWZiXkEyXkFqcGc@._V1_.jpg",
-    "title": "Terminator 2: Judgment Day",
-    "summary": "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her teenage son, John Connor, from a more advanced and powerful cyborg.",
-    "rating": 8.5
-  },
-  {
-    "id": "tt0088763",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BZmM3ZjE0NzctNjBiOC00MDZmLTgzMTUtNGVlOWFlOTNiZDJiXkEyXkFqcGc@._V1_.jpg",
-    "title": "Back to the Future",
-    "summary": "Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.",
-    "rating": 8.5
   }
 ]

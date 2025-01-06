@@ -86,6 +86,7 @@ const Menu: React.FC<MenuProps> = ({ setMenuVisibility, isMenuVisible }) => {
       <Navigation toggleMenuVisibility={closeMenu} />
       <div className={c.contentWrapper} ref={contentRef}>
         <UserMovies
+          isDataFetching={userMovies.isLoading}
           likedMovies={userMovies.data.liked}
           dislikedMovies={userMovies.data.disliked}
           handleSelectedMovie={handleSelectMoviePreview}
