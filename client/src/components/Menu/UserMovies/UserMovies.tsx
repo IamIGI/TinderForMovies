@@ -64,9 +64,12 @@ const MovieList: React.FC<MovieListProps> = ({
           onClick={() => handleSelectedMovie(movie)}
         >
           <img
-            src={movie.imageUrl}
+            src={movie.imageUrl.replace(
+              '@._V1_.jpg',
+              '@._V1_QL75_UX140_CR0,1,140,207_.jpg'
+            )}
             alt={movie.title}
-            className={c.movieImage}
+            loading="lazy"
           />
         </motion.button>
       ))}
