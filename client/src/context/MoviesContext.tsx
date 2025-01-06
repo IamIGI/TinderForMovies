@@ -15,6 +15,7 @@ export interface MoviesContextInterface {
     data: UserMovieDataResponse;
   };
   setMovieStatus: (movie: Movie, isMovieLiked: boolean) => void;
+  resetApp: () => void;
 }
 
 const MoviesContext = createContext<MoviesContextInterface | undefined>(
@@ -40,41 +41,41 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const [isUserMoviesError, setIsUserMoviesError] = useState<boolean>(false);
 
   //Init
-  useEffect(() => {
-    const loadMoviesAndUserMovies = async () => {
-      setIsMoviesLoading(true);
-      setIsUserMoviesLoading(true);
-      setIsMoviesError(false); // Reset error state on each fetch attempt
-      setIsUserMoviesError(false); // Reset error state on each fetch attempt
+  const loadMoviesAndUserMovies = async () => {
+    setIsMoviesLoading(true);
+    setIsUserMoviesLoading(true);
+    setIsMoviesError(false); // Reset error state on each fetch attempt
+    setIsUserMoviesError(false); // Reset error state on each fetch attempt
 
-      try {
-        // Fetch movies
-        const movieData = await moviesApi.fetchMovies({
-          amount: MOVIES_FETCH_AMOUNT,
-        });
-        if (movieData === undefined) {
-          setIsMoviesError(true);
-        } else {
-          setMoviesData(movieData.movies);
-        }
-
-        // Fetch user movies
-        const userMovieData = await moviesApi.fetchUserMovies();
-        if (userMovieData === undefined) {
-          setIsUserMoviesError(true);
-        } else {
-          setUserMoviesData(userMovieData);
-        }
-      } catch (error) {
-        console.error('Error loading movies or user movies:', error);
+    try {
+      // Fetch movies
+      const movieData = await moviesApi.fetchMovies({
+        amount: MOVIES_FETCH_AMOUNT,
+      });
+      if (movieData === undefined) {
         setIsMoviesError(true);
-        setIsUserMoviesError(true);
-      } finally {
-        setIsMoviesLoading(false);
-        setIsUserMoviesLoading(false);
+      } else {
+        setMoviesData(movieData.movies);
       }
-    };
 
+      // Fetch user movies
+      const userMovieData = await moviesApi.fetchUserMovies();
+      if (userMovieData === undefined) {
+        setIsUserMoviesError(true);
+      } else {
+        setUserMoviesData(userMovieData);
+      }
+    } catch (error) {
+      console.error('Error loading movies or user movies:', error);
+      setIsMoviesError(true);
+      setIsUserMoviesError(true);
+    } finally {
+      setIsMoviesLoading(false);
+      setIsUserMoviesLoading(false);
+    }
+  };
+
+  useEffect(() => {
     loadMoviesAndUserMovies();
   }, []);
 
@@ -97,14 +98,10 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
         id: movie.id,
         status: isMovieLiked ? MovieStatus.Liked : MovieStatus.DisLiked,
       })
-      .then((response) => {
-        console.log(response);
-      })
       .catch((error) => {
         console.error('Failed to update movie status:', error);
       });
 
-    console.log(updatedMoviesDataArray.length);
     if (updatedMoviesDataArray.length === MOVIES_LEFT_BEFORE_REFETCH) {
       refetchMovies({
         space: MOVIES_LEFT_BEFORE_REFETCH,
@@ -123,8 +120,6 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
         setIsMoviesError(true);
       } else {
         setMoviesData((prev) => {
-          console.log(prev);
-          console.log(...prev, ...movieData.movies);
           return [...movieData.movies, ...prev];
         });
       }
@@ -134,6 +129,11 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
     } finally {
       // setIsMoviesLoading(false);
     }
+  };
+
+  const resetApp = async () => {
+    await moviesApi.resetMovies();
+    loadMoviesAndUserMovies();
   };
 
   return (
@@ -150,6 +150,7 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
           isError: isUserMoviesError,
         },
         setMovieStatus,
+        resetApp,
       }}
     >
       {children}

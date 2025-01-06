@@ -53,7 +53,7 @@ async function updateMovieStatus(payload: UpdateMovieStatusRequest) {
 }
 
 async function resetMovies() {
-  const url = `${BASE_URL}/resetMovies`;
+  const url = `${BASE_URL}/reset`;
   try {
     const response = await fetch(url, { method: 'POST' });
     if (!response.ok) {

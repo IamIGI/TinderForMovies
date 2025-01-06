@@ -3,10 +3,12 @@ import Card, { CardRef } from '../Card/Card';
 import c from './SwipeCards.module.scss';
 import Loading from '../Loading/Loading';
 import { useMoviesContext } from '../../context/MoviesContext';
+import ResetButton from '../ResetButton/ResetButton';
 
 const SwipeCards = () => {
   const {
     movies: { data, isLoading },
+    resetApp,
   } = useMoviesContext();
   const lastCardRef = useRef<CardRef>(null);
 
@@ -38,6 +40,8 @@ const SwipeCards = () => {
     <div className={c.wrapper}>
       {isLoading ? (
         <Loading />
+      ) : data.length === 0 ? (
+        <ResetButton resetApp={resetApp} />
       ) : (
         data.map((movie, i) => {
           const isLastCard = i === data.length - 1;
