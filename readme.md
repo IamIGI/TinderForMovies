@@ -57,3 +57,27 @@ This command will:
 - **dev:app:** Runs the development versions of both the client and server concurrently.
 - **build:app:** Builds both the client and server for production.
 - **prod:app** Runs the production versions of both the client and server concurrently.
+
+## 5.App
+The application consists of a **server (backend)** and **client (frontend)** that communicate with each other.
+WebPage: https://igitest.pl/ 
+# Tinder for Movies App - Main Functionalities
+
+- **Server (Express, Local Database)**: 
+  - Backend built with **Express.js**; stores data in a **local database**.
+
+- **Client (Vite React TypeScript)**: 
+  - **Frontend** built using **React** with **TypeScript** and bundled via **Vite**.
+
+- **Swipe, Click, and Keyboard Arrow Actions**:
+  - Users can **swipe** to like/dislike movies, **click** to view details, and use **arrow keys** for navigation.
+
+- **RWD Design**: 
+  - **Responsive Web Design** (mobile, tablet, desktop).
+
+- **Deployed on PM2 Linux Server and Custom Domain (igitest.pl)**: 
+  - Hosted on a **Linux server** using **PM2** for process management and **igitest.pl** as the **custom domain**.
+
+![image](https://github.com/user-attachments/assets/1eb7c564-b341-4dd4-b756-1591fc6de5a5)
+
+
