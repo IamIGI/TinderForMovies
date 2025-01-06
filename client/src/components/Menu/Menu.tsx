@@ -17,7 +17,7 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ setMenuVisibility, isMenuVisible }) => {
-  const { likedMovies, dislikedMovies } = useMoviesContext();
+  const { userMovies } = useMoviesContext();
   const [hasMenuBeenHidden, setHasMenuBeenHidden] = useState(false);
   const [moviePreview, setMoviePreview] = useState<Movie | null>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -86,8 +86,8 @@ const Menu: React.FC<MenuProps> = ({ setMenuVisibility, isMenuVisible }) => {
       <Navigation toggleMenuVisibility={closeMenu} />
       <div className={c.contentWrapper} ref={contentRef}>
         <UserMovies
-          likedMovies={likedMovies}
-          dislikedMovies={dislikedMovies}
+          likedMovies={userMovies.data.liked}
+          dislikedMovies={userMovies.data.disliked}
           handleSelectedMovie={handleSelectMoviePreview}
         />
         <MoviePreview
