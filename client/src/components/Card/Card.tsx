@@ -2,21 +2,8 @@ import { useMoviesContext } from '../../context/MoviesContext';
 import { Movie } from '../../interfaces/movie.interface.';
 import CardActions from './CardActions/CardActions';
 import c from './Card.module.scss';
-import {
-  animate,
-  motion,
-  PanInfo,
-  useMotionValue,
-  useTransform,
-} from 'framer-motion';
-import {
-  forwardRef,
-  Ref,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from 'react';
+import { motion, useMotionValue, useTransform, animate } from 'motion/react';
+import { forwardRef, Ref, useImperativeHandle, useRef, useState } from 'react';
 import numberUtils from '../../utils/number.utils';
 
 export type CardRef = {
@@ -32,33 +19,18 @@ const Card = (
   const movieData = { id, imageUrl, rating, summary, title };
   const { setMovieStatus } = useMoviesContext();
   const [lastCardId, setLastCardId] = useState<string | null>(null);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const dragEnd = isMobile ? 200 : 560;
-
+  const dragEnd = 200;
   const position = useMotionValue(0);
   const opacity = useTransform(position, [-dragEnd, 0, dragEnd], [0.3, 1, 0.3]);
-  const rotate = useTransform(position, [-dragEnd, dragEnd], [-30, 30]);
+  const rotate = useTransform(position, [-dragEnd, dragEnd], [-20, 20]);
+  const scale = useTransform(position, [-dragEnd, 0, dragEnd], [0.9, 1, 0.9]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const isCurrentlyMobile = window.innerWidth < 500;
-      if (isCurrentlyMobile !== isMobile) {
-        setIsMobile(isCurrentlyMobile);
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isMobile]);
-
-  const handleDragEnd = (_: MouseEvent, info: PanInfo) => {
-    if (info.offset.x > dragEnd) {
+  const handleDragEnd = () => {
+    if (position.get() > dragEnd) {
       setMovieStatus(movieData, false);
-    } else if (info.offset.x < -dragEnd) {
+    } else if (position.get() < -dragEnd) {
       setMovieStatus(movieData, true);
     }
   };
@@ -70,9 +42,10 @@ const Card = (
   };
 
   const addMovieToLiked = () => {
+    console.log('t1');
     if (isTheSameCard()) return;
 
-    animate(position, -dragEnd, { duration: 0.5 }).then(() => {
+    animate(position, -dragEnd - 100, { duration: 0.3 }).then(() => {
       setMovieStatus(movieData, true);
     });
   };
@@ -80,7 +53,7 @@ const Card = (
   const addMovieToDisliked = () => {
     if (isTheSameCard()) return;
 
-    animate(position, dragEnd, { duration: 0.5 }).then(() => {
+    animate(position, dragEnd + 100, { duration: 0.3 }).then(() => {
       setMovieStatus(movieData, false);
     });
   };
@@ -101,10 +74,11 @@ const Card = (
         x: position,
         opacity,
         rotate,
+        scale,
       }}
-      drag={isMobile ? 'x' : true}
-      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-      // dragElastic={0.2}
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      dragElastic={1}
       onDragEnd={handleDragEnd}
     >
       <div className={c.ratingWrapper}>

@@ -53,6 +53,7 @@ const SwipeCards = () => {
             />
           );
         })
+        // <Card {...data[0]} ref={lastCardRef} />
       )}
     </div>
   );
