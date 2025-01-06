@@ -27,6 +27,7 @@ server/node_modules/
 server/dist/
 server/.DS_Store
 server/src/api/magnetsServer/generated
+server/mockDatabase/
 
 # OS-specific files
 .DS_Store

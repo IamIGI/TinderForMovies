@@ -5,5 +5,40 @@
     "title": "The Godfather",
     "summary": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
     "rating": 9.2
+  },
+  {
+    "id": "tt0050083",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYjE4NzdmOTYtYjc5Yi00YzBiLWEzNDEtNTgxZGQ2MWVkN2NiXkEyXkFqcGc@._V1_.jpg",
+    "title": "12 Angry Men",
+    "summary": "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
+    "rating": 9
+  },
+  {
+    "id": "tt0060196",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMWM5ZjQxM2YtNDlmYi00ZDNhLWI4MWUtN2VkYjBlMTY1ZTkwXkEyXkFqcGc@._V1_.jpg",
+    "title": "The Good, the Bad and the Ugly",
+    "summary": "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+    "rating": 8.8
+  },
+  {
+    "id": "tt0073486",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYjBkMjgzMzYtNzRiMS00NDc3LWE4YTUtZjYxYjZhNjNhYzhhXkEyXkFqcGc@._V1_.jpg",
+    "title": "One Flew Over the Cuckoos Nest",
+    "summary": "A criminal pleads insanity and is admitted to a mental institution, where he rebels against the oppressive nurse and rallies up the scared patients.",
+    "rating": 8.7
+  },
+  {
+    "id": "tt0120815",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BZGZhZGQ1ZWUtZTZjYS00MDJhLWFkYjctN2ZlYjE5NWYwZDM2XkEyXkFqcGc@._V1_.jpg",
+    "title": "Saving Private Ryan",
+    "summary": "Following the Normandy landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
+    "rating": 8.6
+  },
+  {
+    "id": "tt0317248",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYjY4NGI5OTUtY2ZlZS00Zjk4LTk5N2MtN2JmYWVjNGNmMGRlXkEyXkFqcGc@._V1_.jpg",
+    "title": "City of God",
+    "summary": "In the slums of Rio, two kids paths diverge as one struggles to become a photographer and the other a kingpin.",
+    "rating": 8.6
   }
 ]

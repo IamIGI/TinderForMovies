@@ -9,7 +9,14 @@ import {
   useMotionValue,
   useTransform,
 } from 'framer-motion';
-import { forwardRef, Ref, useImperativeHandle, useRef, useState } from 'react';
+import {
+  forwardRef,
+  Ref,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 import numberUtils from '../../utils/number.utils';
 
 export type CardRef = {
@@ -25,12 +32,28 @@ const Card = (
   const movieData = { id, imageUrl, rating, summary, title };
   const { setMovieStatus } = useMoviesContext();
   const [lastCardId, setLastCardId] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const dragEnd = 560;
+  const dragEnd = isMobile ? 200 : 560;
+
   const position = useMotionValue(0);
   const opacity = useTransform(position, [-dragEnd, 0, dragEnd], [0.3, 1, 0.3]);
   const rotate = useTransform(position, [-dragEnd, dragEnd], [-30, 30]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isCurrentlyMobile = window.innerWidth < 500;
+      if (isCurrentlyMobile !== isMobile) {
+        setIsMobile(isCurrentlyMobile);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobile]);
 
   const handleDragEnd = (_: MouseEvent, info: PanInfo) => {
     if (info.offset.x > dragEnd) {
@@ -79,7 +102,7 @@ const Card = (
         opacity,
         rotate,
       }}
-      drag
+      drag={isMobile ? 'x' : true}
       dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
       // dragElastic={0.2}
       onDragEnd={handleDragEnd}
