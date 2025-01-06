@@ -1,7 +1,7 @@
 import { Movie } from '../../../interfaces/movie.interface.';
 import Loading from '../../Loading/Loading';
 import c from './UserMovies.module.scss';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 interface UserMoviesProps {
   likedMovies: Movie[];
