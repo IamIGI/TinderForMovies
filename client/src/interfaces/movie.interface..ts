@@ -7,8 +7,8 @@ export interface Movie {
 }
 
 export interface FetchMovieRequest {
-  from: number;
   amount: number;
+  space?: number;
 }
 
 export interface UpdateMovieStatusRequest {
@@ -18,8 +18,7 @@ export interface UpdateMovieStatusRequest {
 
 export interface MovieDataResponse {
   from: number;
-  to: number;
-  length: number;
+  amount: number | undefined;
   totalMovies: number;
   movies: Movie[];
 }
