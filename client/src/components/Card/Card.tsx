@@ -21,11 +21,11 @@ const Card = (
   const [lastCardId, setLastCardId] = useState<string | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const dragEnd = 200;
+  const dragEnd = 150; //Best for mobile phones
   const position = useMotionValue(0);
   const opacity = useTransform(position, [-dragEnd, 0, dragEnd], [0.3, 1, 0.3]);
   const rotate = useTransform(position, [-dragEnd, dragEnd], [-20, 20]);
-  const scale = useTransform(position, [-dragEnd, 0, dragEnd], [0.9, 1, 0.9]);
+  const scale = useTransform(position, [-dragEnd, 0, dragEnd], [0.7, 1, 0.7]);
 
   const handleDragEnd = () => {
     if (position.get() > dragEnd) {

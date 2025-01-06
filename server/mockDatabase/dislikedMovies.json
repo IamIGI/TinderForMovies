@@ -1,17 +1,10 @@
 [
   {
-    "id": "tt0111161",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_.jpg",
-    "title": "The Shawshank Redemption",
-    "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-    "rating": 9.3
-  },
-  {
-    "id": "tt0468569",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
-    "title": "The Dark Knight",
-    "summary": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
-    "rating": 9
+    "id": "tt0068646",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYTJkNGQyZDgtZDQ0NC00MDM0LWEzZWQtYzUzZDEwMDljZWNjXkEyXkFqcGc@._V1_.jpg",
+    "title": "The Godfather",
+    "summary": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "rating": 9.2
   },
   {
     "id": "tt0108052",
@@ -21,6 +14,13 @@
     "rating": 9
   },
   {
+    "id": "tt0167260",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_.jpg",
+    "title": "The Lord of the Rings: The Return of the King",
+    "summary": "Gandalf and Aragorn lead the World of Men against Saurons army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+    "rating": 8.9
+  },
+  {
     "id": "tt0110912",
     "imageUrl": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_.jpg",
     "title": "Pulp Fiction",
@@ -28,11 +28,11 @@
     "rating": 8.9
   },
   {
-    "id": "tt0120737",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_.jpg",
-    "title": "The Lord of the Rings: The Fellowship of the Ring",
-    "summary": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
-    "rating": 8.8
+    "id": "tt0073486",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYjBkMjgzMzYtNzRiMS00NDc3LWE4YTUtZjYxYjZhNjNhYzhhXkEyXkFqcGc@._V1_.jpg",
+    "title": "One Flew Over the Cuckoos Nest",
+    "summary": "A criminal pleads insanity and is admitted to a mental institution, where he rebels against the oppressive nurse and rallies up the scared patients.",
+    "rating": 8.7
   },
   {
     "id": "tt0120815",
@@ -42,10 +42,10 @@
     "rating": 8.6
   },
   {
-    "id": "tt0317248",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYjY4NGI5OTUtY2ZlZS00Zjk4LTk5N2MtN2JmYWVjNGNmMGRlXkEyXkFqcGc@._V1_.jpg",
-    "title": "City of God",
-    "summary": "In the slums of Rio, two kids paths diverge as one struggles to become a photographer and the other a kingpin.",
+    "id": "tt0102926",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNDdhOGJhYzctYzYwZC00YmI2LWI0MjctYjg4ODdlMDExYjBlXkEyXkFqcGc@._V1_.jpg",
+    "title": "The Silence of the Lambs",
+    "summary": "A young F.B.I. cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims.",
     "rating": 8.6
   },
   {
@@ -56,17 +56,10 @@
     "rating": 8.6
   },
   {
-    "id": "tt0133093",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_.jpg",
-    "title": "The Matrix",
-    "summary": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-    "rating": 8.7
-  },
-  {
-    "id": "tt0120586",
-    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMzhiOTQ0NDItOTg0Zi00OGVmLWE0OGEtMTI4NDM0NWMxZWU4XkEyXkFqcGc@._V1_.jpg",
-    "title": "American History X",
-    "summary": "A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.",
+    "id": "tt0076759",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNWEwOTI0MmUtMGNmNy00ODViLTlkZDQtZTg1YmQ3MDgyNTUzXkEyXkFqcGc@._V1_.jpg",
+    "title": "Star Wars: Episode IV - A New Hope",
+    "summary": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee, and two droids to save the galaxy from the Empires world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
     "rating": 8.5
   }
 ]
