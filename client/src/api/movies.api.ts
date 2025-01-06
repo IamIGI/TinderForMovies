@@ -7,11 +7,12 @@ import {
   UserMovieDataResponse,
 } from '../interfaces/movie.interface.';
 
-console.log('PROD:', import.meta.env.VITE_PROD);
 const BASE_URL =
   import.meta.env.VITE_PROD === 'true'
     ? 'https://api.igitest.pl/movies'
     : 'http://localhost:3000/movies'; // Change this to your actual backend URL
+
+console.log('PROD:', import.meta.env.VITE_PROD);
 console.log(BASE_URL);
 
 async function fetchData(url: string) {

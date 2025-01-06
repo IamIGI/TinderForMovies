@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "tt0111161",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_.jpg",
+    "title": "The Shawshank Redemption",
+    "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "rating": 9.3
+  },
+  {
+    "id": "tt0468569",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+    "title": "The Dark Knight",
+    "summary": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+    "rating": 9
+  }
+]
