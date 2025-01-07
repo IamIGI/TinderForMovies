@@ -17,7 +17,7 @@ export interface MoviesContextInterface {
   setMovieStatus: (movie: Movie, isMovieLiked: boolean) => Promise<void>;
   resetApp: () => void;
 }
-
+//exports required for tests
 export const MoviesContext = createContext<MoviesContextInterface | undefined>(
   undefined
 );
@@ -33,7 +33,6 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
     disliked: [],
   });
 
-  // Loading and error states for movies and user movies
   const [isMoviesLoading, setIsMoviesLoading] = useState<boolean>(false);
   const [isUserMoviesLoading, setIsUserMoviesLoading] =
     useState<boolean>(false);
@@ -44,8 +43,8 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const loadMoviesAndUserMovies = async () => {
     setIsMoviesLoading(true);
     setIsUserMoviesLoading(true);
-    setIsMoviesError(false); // Reset error state on each fetch attempt
-    setIsUserMoviesError(false); // Reset error state on each fetch attempt
+    setIsMoviesError(false);
+    setIsUserMoviesError(false);
 
     try {
       // Fetch movies
@@ -110,8 +109,7 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const refetchMovies = async (payload: FetchMovieRequest) => {
-    // setIsMoviesLoading(true);
-    setIsMoviesError(false); // Reset error state on each refetch
+    setIsMoviesError(false);
 
     try {
       const movieData = await moviesApi.fetchMovies(payload);
@@ -125,8 +123,6 @@ export const MovieContextProvider: React.FC<{ children: React.ReactNode }> = ({
     } catch (error) {
       console.error('Failed to refetch movies:', error);
       setIsMoviesError(true);
-    } finally {
-      // setIsMoviesLoading(false);
     }
   };
 

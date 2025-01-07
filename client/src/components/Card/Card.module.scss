@@ -16,10 +16,6 @@ $radius: 30px;
   background-position: center;
   background-repeat: no-repeat;
 
-  // -webkit-box-shadow: 0px 0px 14px 3px rgba(66, 68, 90, 1);
-  // -moz-box-shadow: 0px 0px 14px 3px rgba(66, 68, 90, 1);
-  // box-shadow: 0px 0px 14px 3px rgba(66, 68, 90, 1);
-
   &:hover,
   :active {
     cursor: grab;
@@ -94,6 +90,5 @@ $radius: 30px;
   p {
     line-height: 19px;
     font-size: 16px;
-    // font-weight: 700;
   }
 }
