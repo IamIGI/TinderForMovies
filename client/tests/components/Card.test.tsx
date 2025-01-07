@@ -42,7 +42,7 @@ const setup = () => {
   );
 };
 
-describe('Card Component', () => {
+describe('Card', () => {
   beforeEach(() => {
     mockSetMovieStatus.mockClear();
     cleanup();
