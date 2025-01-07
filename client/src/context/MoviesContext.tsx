@@ -18,7 +18,7 @@ export interface MoviesContextInterface {
   resetApp: () => void;
 }
 
-const MoviesContext = createContext<MoviesContextInterface | undefined>(
+export const MoviesContext = createContext<MoviesContextInterface | undefined>(
   undefined
 );
 

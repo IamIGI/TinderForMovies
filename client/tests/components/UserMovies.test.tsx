@@ -93,6 +93,19 @@ describe('UserMovies', () => {
 
     expect(mockHandleSelectedMovie).toHaveBeenCalledWith(mockLikedMovies[0]);
   });
+  it('should render no movie items when user array is empty', () => {
+    render(
+      <UserMovies
+        likedMovies={[]}
+        dislikedMovies={[]}
+        handleSelectedMovie={mockHandleSelectedMovie}
+        isDataFetching={false}
+      />
+    );
+    //queryAllByRole - no throw error, instead return empty list
+    const movieItemButton = screen.queryAllByRole('button');
+    expect(movieItemButton).toHaveLength(0);
+  });
 
   it('should renders buttons for each movie', () => {
     render(
@@ -104,9 +117,9 @@ describe('UserMovies', () => {
       />
     );
 
-    const motionButtons = screen.getAllByRole('button');
-    expect(motionButtons).toHaveLength(3); // 2 liked + 1 disliked
-    motionButtons.forEach((button) => {
+    const movieItemButton = screen.getAllByRole('button');
+    expect(movieItemButton).toHaveLength(3); // 2 liked + 1 disliked
+    movieItemButton.forEach((button) => {
       expect(button).toHaveClass('hover-effect');
     });
   });

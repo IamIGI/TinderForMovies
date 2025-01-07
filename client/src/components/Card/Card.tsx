@@ -21,7 +21,7 @@ const Card = (
   const [lastCardId, setLastCardId] = useState<string | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const dragEnd = 150; //Best for mobile phones
+  const dragEnd = 140; //Best for mobile phones
   const position = useMotionValue(0);
   const opacity = useTransform(position, [-dragEnd, 0, dragEnd], [0.3, 1, 0.3]);
   const rotate = useTransform(position, [-dragEnd, dragEnd], [-20, 20]);
@@ -43,7 +43,6 @@ const Card = (
 
   const addMovieToLiked = async () => {
     if (isTheSameCard()) return;
-
     animate(position, -dragEnd - 100, { duration: 0.3 }).then(async () => {
       await setMovieStatus(movieData, true);
     });
@@ -79,6 +78,7 @@ const Card = (
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={1}
       onDragEnd={handleDragEnd}
+      data-testid="card"
     >
       <div className={c.ratingWrapper}>
         <div className={c.ratingContent}>
