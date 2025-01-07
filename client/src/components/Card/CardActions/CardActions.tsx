@@ -13,6 +13,7 @@ const CardActions: React.FC<CardActionsProps> = ({
     <div className={c.wrapper}>
       <button onClick={addMovieToLiked} className="hover-effect">
         <img
+          data-testid="liked"
           className="white-svg-icon hover-effect"
           src="svg/card/love.svg"
           alt="love"
@@ -23,11 +24,11 @@ const CardActions: React.FC<CardActionsProps> = ({
         <img
           className="white-svg-icon hover-effect "
           src="svg/card/playPause.svg"
-          alt="love"
+          alt="playPause"
         />
       </button>
       <button
-        aria-role="reject"
+        data-testid="disliked"
         onClick={addMovieToDisliked}
         className="hover-effect"
       >
