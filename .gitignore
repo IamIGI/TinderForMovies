@@ -29,6 +29,9 @@ server/.DS_Store
 server/src/api/magnetsServer/generated
 server/mockDatabase/likedMovies.json
 server/mockDatabase/dislikedMovies.json
+mockDatabase/dislikedMovies.json
+mockDatabase/likedMovies.json
+
 
 
 # OS-specific files
