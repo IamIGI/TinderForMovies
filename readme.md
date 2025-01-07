@@ -81,4 +81,7 @@ The application consists of a **server (backend)** and **client (frontend)** tha
 
 ![image](https://github.com/user-attachments/assets/1eb7c564-b341-4dd4-b756-1591fc6de5a5)
 
+## 6.Cover app with unit tests
+![image](https://github.com/user-attachments/assets/712e57c7-8495-4d09-8e2b-f5c45a595fbe)
+
 
