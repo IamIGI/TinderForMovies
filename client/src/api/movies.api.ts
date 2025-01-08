@@ -12,8 +12,8 @@ const BASE_URL =
     ? 'https://api.igitest.pl/movies'
     : 'http://localhost:3000/movies'; // Change this to your actual backend URL
 
-console.log('PROD:', import.meta.env.VITE_PROD);
-console.log(BASE_URL);
+// console.log('PROD:', import.meta.env.VITE_PROD);
+// console.log(BASE_URL);
 
 async function fetchData(url: string) {
   try {
